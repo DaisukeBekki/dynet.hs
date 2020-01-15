@@ -76,6 +76,11 @@ build:
 # Extra directories used by stack for building
 # extra-include-dirs: [/path/to/dir]
 # extra-lib-dirs: [/path/to/dir]
-#
+
+extra-lib-dirs:
+  - ../../../local/lib/dynet-2.0.3/build/dynet
+  - ../../../local/lib/dynet-2.0.3/dynet
+  - c
+
 # Allow a newer minor version of GHC than the snapshot specifies
 # compiler-check: newer-minor

@@ -1,0 +1,141 @@
+name: DyNet
+version: '0.1.0.0'
+category: Web
+author: Masashi Yoshikawa
+maintainer: yoshikawa.masashi.yh8@is.naist.jp
+copyright: Masashi Yoshikawa
+license: BSD3
+github: masashi-y/DyNet
+extra-source-files:
+- c/trainer.cpp
+- c/expr.cpp
+- c/rnn.cpp
+- c/dynet.cpp
+- c/vector.cpp
+library:
+  source-dirs: src
+  extra-libraries:
+  - dynetc
+  - dynet
+  build-tools:
+  - c2hs
+  exposed-modules:
+  - DyNet.Expr
+  - DyNet.Core
+  - DyNet.RNN
+  - DyNet.Dict
+  - DyNet.Vector
+  - DyNet.Train
+  - DyNet.IO
+  dependencies:
+  - base >=4.7 && <5
+  - text
+  - hashtables
+  - hashable
+executables:
+  train-xor:
+    main: Main.hs
+    source-dirs: examples/xor
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    extra-libraries:
+    - dynetc
+    - dynet
+    dependencies:
+    - base
+    - DyNet
+  lstm_tagger:
+    main: Main.hs
+    source-dirs:
+    - examples/lstm_tagger
+    - examples/utils
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    extra-libraries:
+    - dynetc
+    - dynet
+    dependencies:
+    - base
+    - text
+    - optparse-declarative
+    - mtl
+    - DyNet
+  train-xor-batch-lookup:
+    main: Main.hs
+    source-dirs: examples/xor-batch-lookup
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    extra-libraries:
+    - dynetc
+    - dynet
+    dependencies:
+    - base
+    - DyNet
+  treelstm:
+    main: Main.hs
+    source-dirs:
+    - examples/treelstm
+    - examples/utils
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    extra-libraries:
+    - dynetc
+    - dynet
+    dependencies:
+    - base
+    - text
+    - optparse-declarative
+    - mtl
+    - parsec
+    - DyNet
+  rte:
+    main: Main.hs
+    source-dirs:
+    - examples/rte
+    - examples/utils
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    extra-libraries:
+    - dynetc
+    - dynet
+    dependencies:
+    - base
+    - text
+    - optparse-declarative
+    - mtl
+    - parsec
+    - DyNet
+  train-xor-batch:
+    main: Main.hs
+    source-dirs: examples/xor-batch
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    extra-libraries:
+    - dynetc
+    - dynet
+    dependencies:
+    - base
+    - DyNet
+tests:
+  DyNet-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - DyNet
