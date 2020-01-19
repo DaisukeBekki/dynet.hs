@@ -77,9 +77,12 @@ build:
 # extra-include-dirs: [/path/to/dir]
 # extra-lib-dirs: [/path/to/dir]
 
+extra-include-dirs:
+  - ../../include/eigen3
+  - ../dynet-2.0.3/dynet
+
 extra-lib-dirs:
-  - ../../../local/lib/dynet-2.0.3/build/dynet
-  - ../../../local/lib/dynet-2.0.3/dynet
+  - ../dynet-2.0.3/build/dynet
   - c
 
 # Allow a newer minor version of GHC than the snapshot specifies
