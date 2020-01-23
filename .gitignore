@@ -5,3 +5,7 @@ build
 *.hi
 *.swp
 *.swo
+*.bak
+.stack-work/
+stack.yaml.lock
+package.yaml
