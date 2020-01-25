@@ -7,5 +7,6 @@ build
 *.swo
 *.bak
 .stack-work/
+haddock
 stack.yaml.lock
 package.yaml
